@@ -8,7 +8,7 @@
 <body>
 
     <div>
-        <!-- Testing getElementById ( HTML content ) -->
+        <!-- Testing getElementById ( Change HTML content ) -->
         <h1>Hello! My name is Htoo Lapyae Win</h1>
         <p id="demo">I have many girlfriends.</p>
         <button type="button" onclick=" document.getElementById('demo').innerHTML = 'Hahahaha! I am just kidding.'" >To view my girlfriends list</button>
@@ -25,6 +25,12 @@
         <!-- Testing getElementById ( Change CSS ) -->
         <p id="changeFS">Please click the button to change font size.</p>
         <button type="button" onclick="document.getElementById('changeFS').style.fontSize ='50px'">Change font size</button>
+    </div>
+    <hr>
+    <div>
+        <!-- Hide the HTML content -->
+        <p id="hide">My name is Sai Lapyae Win.</p>
+        <button onclick="document.getElementById('hide').style.display='none'">Click Me!</button>
     </div>
     <script src="./app.js"></script>
 </body>
