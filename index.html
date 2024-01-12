@@ -7,21 +7,29 @@
 </head>
 <body>
 
-<div>
-            <!-- Testing getElementById ( HTML content ) -->
-    <h1>Hello! My name is Htoo Lapyae Win</h1>
-    <p id="demo">I have many girlfriends.</p>
-    <button type="button" onclick=" document.getElementById('demo').innerHTML = 'Hahahaha! I am just kidding.'" >To view my girlfriends list</button>
+    <div>
+        <!-- Testing getElementById ( HTML content ) -->
+<h1>Hello! My name is Htoo Lapyae Win</h1>
+<p id="demo">I have many girlfriends.</p>
+<button type="button" onclick=" document.getElementById('demo').innerHTML = 'Hahahaha! I am just kidding.'" >To view my girlfriends list</button>
 </div>
 
 <hr>
 
 <h3 style="color: red;">Testing getElementById ( door open / close ) isn't work yet.</h3>
 <div>
-    <!-- Testing getElementById ( Change HTML attribute ) -->
+<!-- Testing getElementById ( Change HTML attribute ) -->
 <button onclick="document.getElementById('bulb').src ='dooropen.gif'">Open the door</button>
 <img id="bulb" src="./images/doorclose.gif" width="200px" alt="" >
 <button onclick="document.getElementById('bulb').src='doorclose.gif'">Close the door</button>
+</div>
+
+<hr>
+
+<div>
+    <!-- Testing getElementById ( Change CSS ) -->
+    <p id="demo">Please click the button to change font size.</p>
+    <button type="button" onclick="document.getElementById('demo').style.fontSize ='50px'">Change font size</button>
 </div>
 <script src="./app.js"></script>
 </body>
