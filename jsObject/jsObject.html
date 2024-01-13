@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This page is about javascript object.</h1>
+    <p id="obj"></p>
+    <script>
+        // the object method is at the below line.
+        const saiInfo = {allData(){return "His name is " + saiInfo.name + " and " + saiInfo.age +
+        " years old and his height is about " + saiInfo.height + " and then he is work as a " + saiInfo.job + "."}};
+        saiInfo.name = "Sai Lapyae Win";
+        saiInfo.height = "168 cm";
+        saiInfo.age = 22;
+        saiInfo.job = "Web developer";
+
+        document.getElementById("obj").innerHTML = saiInfo.allData();
+    </script>
+</body>
+</html>
