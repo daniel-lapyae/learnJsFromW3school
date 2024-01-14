@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- |||||||||onclick event use in script. -->
+    <div class="onclick01">
+        <h1>This page is about onclick event.</h1>
+        <p id="demo">Click Me!</p>
+    </div>
+
+    <hr>
+
+
+    <!-- ||||||||onclick event use in HTML tag -->
+    <div class="onclick02">
+        <h1>This page is about onclick event.</h1>
+        <p id="demo2" onclick="document.getElementById('demo2').innerHTML = `OUCH!!! Don't hit me.`">Click Me!</p>
+    </div>
+
+    <hr>
+    <div class="onclick03">
+        <h3>onclick event use in button tag.</h3>
+        <p id="txt">The text color will change.</p>
+        <button id="btn">Click Me!</button>
+    </div>
+
+    <hr>
+    <div class="onclick04">
+        <button onclick="getElementById('demo1').innerHTML = Date()">What is the time?</button>
+        <p id="demo1"></p>
+    </div>
+
+    <hr>
+
+    <div class="onclick05">
+        <div>
+            <label for="txt1">Enter something : </label>
+            <input type="text" name="" id="txt1" >
+        </div>
+        <br>
+        <div>
+            <label for="cptxt">Copy text is here :  </label>
+            <input type="text" name="" id="cptxt" >
+        </div>
+        <button id="copy">Copy text from Enter something</button>
+    </div>
+
+    <hr>
+
+    <div>
+        
+    </div>
+
+    <script>
+        // for class = onclick01
+        document.getElementById("demo").onclick = function(){changeClick()};
+        function changeClick(){
+            document.getElementById("demo").innerHTML = "OUCH!!! Don't hit me."
+        }
+        // for class = onclick03
+        document.getElementById("btn").onclick = function(){changeColor()};
+        function changeColor(){
+            document.getElementById("txt").style.color = "gold";
+        }
+        // for class = onclick05
+        document.getElementById("copy").onclick = function(){copyText()};
+        function copyText(){
+            document.getElementById("cptxt").value = document.getElementById("txt1").value;
+        }
+    </script>
+</body>
+</html>
