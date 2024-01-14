@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Test page</h1>
+    <h5>toString() can be convert number to string.</h5>
+    <p id="tostr"></p>
+    <h5>toExponential() can be convert number to with exponential.</h5>
+    <p id="toexp"></p>
+    <h5>toFixed() can be fixed the decimal point.</h5>
+    <p id="tofix"></p>
+    <p id="demo"></p>
+    <h5> Number() can be use to convert javascript variable to number.</h5>
+    <p id="num"></p>
+    <h5>Also can convert date to number.</h5>
+    <p id="demo1"></p>
+    <script>
+        let w = 839;
+        document.getElementById("tostr").innerHTML = 
+        `${w.toString()} <br> 
+        ${(839).toString()}`;
+
+        let x = 9.656;
+        document.getElementById("toexp").innerHTML = 
+        `${x.toExponential(2)} <br>
+        ${x.toExponential(4)} <br>
+        ${x.toExponential(6)}`;
+        
+        let y = 9.656;
+        document.getElementById("tofix").innerHTML = 
+        `${y.toFixed(0)} <br>
+        ${y.toFixed(2)} <br>
+        ${y.toFixed(4)}`;
+
+        let z = 9.656;
+        document.getElementById("demo").innerHTML = 
+        z.toPrecision() + "<br>" + // toPrecision(0) <---- error
+        z.toPrecision(2) + "<br>" +
+        z.toPrecision(4) + "<br>" +
+        z.toPrecision(6);  
+
+        document.getElementById("num").innerHTML = 
+        Number(true) + "<br>" +
+        Number(false) + "<br>" +
+        Number("10") + "<br>" + 
+        Number("  10") + "<br>" +
+        Number("10  ") + "<br>" +
+        Number(" 10  ") + "<br>" +
+        Number("10.33") + "<br>" + 
+        Number("10,33") + "<br>" +
+        Number("10 33") + "<br>" +
+        Number("John");
+
+        document.getElementById("demo1").innerHTML =
+        "From 1970-01-01 to 2024-01-13 :" + Number(new Date("2024-01-13")) + " ms";
+    </script>
+</body>
+</html>
