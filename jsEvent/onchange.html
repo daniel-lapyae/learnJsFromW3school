@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Please choose any fruit from the list.</h1>
+    <select name="" id="fruits" onchange="choose()">
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="orange">Orange</option>
+        <option value="mango">Mango</option>
+        <option value="lemon">Lemon</option>
+    </select>
+    <p id="selected"></p>
+
+    <br>
+
+    <label for="name">Enter Your Name : </label>
+    <input type="text" id="name" placeholder="Sai Lapyae Win" onchange="username(value)">
+    <p id="demo"></p>
+
+    <script>
+        // function for select
+        function choose(){
+            let result = document.getElementById("fruits").value;
+            // document.getElementById("selected").innerHTML = "I want to eat " + result ;
+            document.getElementById("selected").innerHTML = `I want to eat ${result}.`; // with template string
+        }
+        // function for input
+        function username(value){
+            // alert(`Your name is : ${value}.`);
+            document.getElementById("demo").innerHTML = `♥ Your name is : ${value}.`
+        }
+    </script>
+</body>
+</html>
