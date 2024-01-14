@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="arr"></p>
+    <p id="fruits"></p>
+    <h4>Construct an unordered list with javascript.</h4>
+    <p id="unOrdFru"></p>
+    <h4>An unordered list by using forEach() function.</h4>
+    <p id="txt"></p>
+    <h4>Combining the fruits and flowers arrays.</h4>
+    <p id="fruflo"></p>
+    <h4>Flatting array (Check the difference at console)</h4>
+    <p id="nor"></p>
+    <p id="flat"></p>
+    <h4>Splice an array</h4>
+    <p id="org"></p>
+    <p id="spl"></p>
+    <h4>Slice an array</h4>
+    <p id="original"></p>
+    <p id="sli"></p>
+    <h4>Sort array elements by alphabet.</h4>
+    <p id="bfsort"></p>
+    <p id="sortalph"></p>
+    <p id="sorRev"></p>
+    <h4>Sort numbers by alphabet and numberic.</h4>
+    <p id="points"></p>
+    <button onclick="sorAlpb()">Sort by alphabet</button>
+    <button onclick="sorNum()">Sort by numberic</button>
+    <p id="aftSor"></p>
+    <script>
+        const arr = ["a","b","c","d","e","f"];
+        document.getElementById("arr").innerHTML = arr;
+
+        // Construct an unordered list with javascript.
+        const fruits = ["Apple","Banana","Coconut","Mango","Orange"]
+        document.getElementById("fruits").innerHTML = fruits + "<br>" + fruits.length;
+
+        let unord = "<ul>"
+        for(let i = 0 ; i < fruits.length ; i++){
+            unord += "<li>" + fruits[i] + "</li>";
+        }
+        unord += "</ul>";
+        document.getElementById("unOrdFru").innerHTML = unord;
+                //(OR)
+        let text = "<ul>";
+        fruits.forEach(myFunction);
+        text += "</ul>";
+        document.getElementById("txt").innerHTML = text;
+        function myFunction(value) {
+        text += "<li>" + value + "</li>";
+        } 
+
+        // Combining fruits and flowers array
+        const flowers = ["Rose","Sunflower"]
+        const fruitsFlowers = fruits.concat(flowers);
+        document.getElementById("fruflo").innerHTML = fruitsFlowers;
+
+        // flat an array
+        const normal = [1,2,[3.2,3.6,3.95],4,5,[6.5,6.85],10];
+        const flatarr = normal.flat();
+        document.getElementById("nor").innerHTML = normal;
+        document.getElementById("flat").innerHTML = flatarr;
+        console.log(normal);
+        console.log(flatarr);
+
+        // splice()
+        const vowels = ["a","b","c","d","e","f"];
+        document.getElementById("org").innerHTML = "The original : " + vowels;
+        const vsplice = vowels.splice(1,5,"e","i","o","u")
+        document.getElementById("spl").innerHTML = "After spliced : " + vowels + "<br>" + "removed elements : " + vsplice;
+
+        // slice()
+        const Fruits = ["Apple","Banana","Coconut","Mango","Orange"];
+        const frusli = Fruits.slice(2); // From index no: 2 to the end;
+        const fruslice = Fruits.slice(1, 4);    // From index no: 1 to 4 , but "not delete no: 4 element";
+        document.getElementById("original").innerHTML = Fruits;
+        document.getElementById("sli").innerHTML = "Sliced Fruits from 2 to the end : " + frusli + "<br>" + 
+        "Sliced Fruits from 1 to 4, but 'not delete element 4 : " + fruslice;
+
+        // Arary sort()  (alphabet sort)
+        const unsort = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("bfsort").innerHTML = "The original array : " + unsort;
+        const Sort = unsort.sort();
+        document.getElementById("sortalph").innerHTML = "After using sort() : " + Sort;
+
+        // Array reverse()
+        const unSort = ["Banana", "Orange", "Apple", "Mango"]
+        const revSor = unSort.reverse();
+        document.getElementById("sorRev").innerHTML = "After using reverse() : " + revSor;
+
+        // Array sort(function(a,b){return (a-b)}); (Nunberic sort)
+        const points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("points").innerHTML = "The original : " + points;
+        function sorAlpb(){
+            points.sort();
+            document.getElementById("aftSor").innerHTML = "The result of sort() : " + points;
+        }
+        function sorNum(){
+            points.sort(function(a,b){return (a-b)});
+            document.getElementById("aftSor").innerHTML = "The result of sort(function(a,b){return (a-b)}) : " + points;
+        }
+    </script>
+</body>
+</html>
