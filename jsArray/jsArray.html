@@ -10,28 +10,71 @@
     <p id="fruits"></p>
     <h4>Construct an unordered list with javascript.</h4>
     <p id="unOrdFru"></p>
+
     <h4>An unordered list by using forEach() function.</h4>
     <p id="txt"></p>
+
     <h4>Combining the fruits and flowers arrays.</h4>
     <p id="fruflo"></p>
+
     <h4>Flatting array (Check the difference at console)</h4>
     <p id="nor"></p>
     <p id="flat"></p>
+
     <h4>Splice an array</h4>
     <p id="org"></p>
     <p id="spl"></p>
+
     <h4>Slice an array</h4>
     <p id="original"></p>
     <p id="sli"></p>
+
     <h4>Sort array elements by alphabet.</h4>
     <p id="bfsort"></p>
     <p id="sortalph"></p>
     <p id="sorRev"></p>
+    
     <h4>Sort numbers by alphabet and numberic.</h4>
     <p id="points"></p>
     <button onclick="sorAlpb()">Sort by alphabet</button>
     <button onclick="sorNum()">Sort by numberic</button>
     <p id="aftSor"></p>
+
+    <h4>Sort number ramdomly</h4>
+    <button onclick="ramd()">Sort by ramdomly</button>
+    <p id="ramSor"></p>
+
+    <h4>The Fisher Yate Method (New version of sort number ramdomly)</h4>
+    <button onclick="fym()">sort ramdomly</button>
+    <p id="fymR"></p>
+
+    <h4>Find the lowest value in array</h4>
+    <p id="ori"></p>
+    <p id="low"></p>
+
+    <h4>Array Iteration (forEach())</h4>
+    <p id="nums"></p>
+    <p id="forE"></p>
+
+    <h4>map()</h4>
+    <p id="newAry"></p>
+
+    <h4>filter()</h4>
+    <p id="bfFil"></p>
+    <p id="aftFil"></p>
+
+    <h4>reduce() & reduceRight()</h4>
+    <p id="bfRedu"></p>
+    <p id="aftRedu"></p>
+    <p id="aftReduRig"></p>
+
+    <h4>every()</h4>
+    <p id="bfcheck"></p>
+    <p id="checkAll"></p>
+    <p id="checkSome"></p>
+
+    <h4>Array.from()</h4>
+    <p id="arrFrom"></p>
     <script>
         const arr = ["a","b","c","d","e","f"];
         document.getElementById("arr").innerHTML = arr;
@@ -104,6 +147,87 @@
             points.sort(function(a,b){return (a-b)});
             document.getElementById("aftSor").innerHTML = "The result of sort(function(a,b){return (a-b)}) : " + points;
         }
-    </script>
+
+        // Array sort ramdomly
+        function ramd(){
+            points.sort(function(){return 0.5 - Math.random()})
+            document.getElementById("ramSor").innerHTML = points;
+        }
+
+        // The Fisher Yate Method
+        function fym(){
+            for(let i = ( -1 + points.length) ; i > 0 ; i--){
+                let j = Math.floor(Math.random() * (i + 1));
+                let k = point[i];
+                points[i] = points[j];
+                points[j] = k;
+                document.getElementById("fymR").innerHTML = points;
+            }
+        }
+
+        // Find the lowest value in array;
+        document.getElementById("ori").innerHTML = points;
+        document.getElementById("low").innerHTML = "The lowest value is : " + findlow(points);
+        function findlow(points){
+            return Math.min.apply(null,points);
+        }
+
+        // Array Iteration ( forEach())
+        const numbers = [45, 4, 9, 16, 25];
+        document.getElementById("nums").innerHTML = numbers;
+        let txt = "";
+        numbers.forEach(fEach);
+        document.getElementById("forE").innerHTML = txt;
+        function fEach(value){
+            txt += value + "<br>";
+        }
+
+        // map()
+        const newNumbers = numbers.map(numMap);
+        document.getElementById("newAry").innerHTML = "The result of map : " + newNumbers;
+        function numMap(value,index,numbers){
+            return value * 3;
+        }
+
+        // filter()
+        document.getElementById("bfFil").innerHTML = "Before filter : " + numbers;
+        const aftFil = numbers.filter(numFil);
+        document.getElementById("aftFil").innerHTML = "The result of filter : " + aftFil;
+        function numFil(value,index,numbers){
+            return value > 10 ;
+        }
+
+        // reduce() & reduceRight()
+        document.getElementById("bfRedu").innerHTML = "Before reduce : " + numbers;
+        const redu = numbers.reduce(numRedu);
+        document.getElementById("aftRedu").innerHTML = "The result after using reduce() : " + redu;
+        function numRedu(total,value,index,numbers){
+            return total + value ;
+        }
+        const reduRig = numbers.reduceRight(numReduRig)
+        document.getElementById("aftReduRig").innerHTML = "The result after using reduceRight() : " + reduRig;
+        function numReduRig(total,value,index,numbers){
+            return total * value ;
+        }
+
+        // every()
+        document.getElementById("bfcheck").innerHTML = "Before reduce : " + numbers;
+        const checkEvy = numbers.every(checkAll);
+        document.getElementById("checkAll").innerHTML = "Is all values in array less than 18? : " + checkEvy;
+        function checkAll(value,index,numbers){
+            return value < 18 ;
+        }
+
+        // some()
+        const checkSom = numbers.some(checkSome);
+        document.getElementById("checkSome").innerHTML = "Is some values in array less than 18? : " + checkSom;
+        function checkSome(value,index,numbers){
+            return value < 18 ;
+        }
+
+        // Array.from()
+        const arrFrm = Array.from("651694")
+        document.getElementById("arrFrom").innerHTML = arrFrm;
+        </script>
 </body>
 </html>
