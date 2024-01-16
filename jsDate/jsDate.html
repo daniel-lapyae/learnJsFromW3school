@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This page is about javascript date.</h1>
+    <p id="curDat"></p>
+    <p id="dStr"></p>
+    <p id="dYMD"></p>
+    <p style="color: red;">You will see the difference of date string and date argument.</p>
+    <h3>Previous Century</h3>
+    <p id="pCen"></p>
+    <h4>toDateString</h4>
+    <p id="curDatTDS"></p>
+
+    <h3>Running Seconds</h3>
+    <p id="second"></p>
+    <p id="sec"></p>
+    <script>
+        // new Date(); <---- No argument
+        const curDate = new Date();
+        document.getElementById("curDat").innerHTML = " ♥ Now, the time is : " + curDate;
+
+        // new Date(date string);
+        const dStr = new Date("2001,08-04");
+        document.getElementById("dStr").innerHTML = `♥ The date string ("2001,08-04") is : ${dStr};`
+
+        // new Date(year,month,day);
+        const dYMD = new Date(2001,7,4);
+        document.getElementById("dYMD").innerHTML = "♥ The date (2001,7,4) is : " + dStr;
+
+        // Previous century
+        const pCen = new Date(66,2,18);
+        document.getElementById("pCen").innerHTML = "♥ The date (66,2,18) is : " + pCen        ;
+
+        // date.toDateString();
+        const toDS = curDate.toDateString();
+        document.getElementById("curDatTDS").innerHTML = " ♥ The result using toDateString() is : " + toDS;
+        
+    </script>
+</body>
+</html>
