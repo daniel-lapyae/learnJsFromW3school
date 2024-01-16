@@ -75,6 +75,21 @@
 
     <h4>Array.from()</h4>
     <p id="arrFrom"></p>
+
+    <h4>Array.keys()</h4>
+    <p id="default"></p>
+    <p id="arrKey"></p>
+
+    <h4>Array.entries()</h4>
+    <p id="bfEnt"></p>
+    <p id="aftEnt"></p>
+
+    <h4>Array.with()</h4>
+    <p id="bfWith"></p>
+    <p id="aftWith"></p>
+
+    <h4>spread</h4>
+    <p id="spread"></p>
     <script>
         const arr = ["a","b","c","d","e","f"];
         document.getElementById("arr").innerHTML = arr;
@@ -228,6 +243,39 @@
         // Array.from()
         const arrFrm = Array.from("651694")
         document.getElementById("arrFrom").innerHTML = arrFrm;
+
+        // Array.keys()
+        document.getElementById("default").innerHTML = "Array : " + numbers;
+        const keys = numbers.keys()
+        let result = "";
+        for (let k of keys){
+            result += k ;
+            document.getElementById("arrKey").innerHTML = "The result of using array.keys() : " + result;
+        }
+
+        // Array.entries()
+        document.getElementById("bfEnt").innerHTML = "Array : " + fruits;
+        const toEnt = fruits.entries();
+        let show = "";
+        for (let f of toEnt){
+            show += f + "<br>";
+            document.getElementById("aftEnt").innerHTML = "The result of using array.entries() : " + show;
+        }
+
+        // Array.with()
+        document.getElementById("bfWith").innerHTML = "Array : " + fruits;
+        const fwith = fruits.with(2,"Grape");
+        document.getElementById("aftWith").innerHTML = "After using array.with() : " + fwith;
+
+        // Array.spread(...)
+        const a1 = ["a","b","c","d","e"];
+        const a2 = ["f","g","h","i","j"];
+        const a3 = ["k","l","m","n","o"];
+        const a4 = ["p","q","r","s","t"];
+        const spread = [...a1,...a2,...a3,...a4];
+        document.getElementById("spread").innerHTML = "The result of spread : " + spread;
+
+
         </script>
 </body>
 </html>
