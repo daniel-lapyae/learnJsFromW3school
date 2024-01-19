@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This page is about arrow function.</h1>
+    
+    <h3>Arrow Function</h3>
+    <p id="arrowFunction"></p>
+    <h3>Implicit return</h3>
+    <p id="implicitReturn"></p>
+    <h3>Anonymous Arrow Function</h3>
+    <p>Check at console</p>
+    <script>
+        // Arrow Function
+        const arrowFunction = ( a , b ) => {
+            return document.getElementById("arrowFunction").innerHTML = a * b ;
+        }
+        arrowFunction(5,8);
+
+        // Implicit return
+        const implicitReturn = ( a , b ) =>  document.getElementById("implicitReturn").innerHTML = a + b ;
+        implicitReturn(5,8);
+
+        // Anonymous Arrow Function
+        document.addEventListener("click", () => {
+            console.log("Click")
+        })
+    </script>
+</body>
+</html>

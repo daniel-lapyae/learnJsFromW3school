@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This page is about for loop.</h1>
+
+    <h3>For loop</h3>
+    <p id="subjects"></p>
+
+    <h3>For in</h3>
+    <p id="mySelf"></p>
+
+    <h3>For of</h3>
+    <p id="forOf"></p>
+    <script>
+        const subjects = ["Myanmar","English","Mathematics","Physics","Chemistry","Biology"]
+        let txt = "";
+        // for loop
+        for ( let i = 0 ; i < subjects.length ; i++ ){
+            txt += subjects[i] + ", ";
+            document.getElementById("subjects").innerHTML = `I studied 6 subjects at grade 11. These subjects are : ${txt}.`;
+        }
+
+        // for in
+        const mySelf = {
+            name : "Htoo Lapyae Win",
+            age : 22,
+            haveGf : null,
+            job : "Web Developer"
+        }
+        let about = "";
+        for (let info in mySelf){
+            about += mySelf[info]+ ", ";
+            document.getElementById("mySelf").innerHTML = "These are about myself : " + about;
+        }
+
+        // for of
+        let forOf = "";
+        for (let subs of subjects){
+            forOf += subs + ", ";
+            document.getElementById("forOf").innerHTML = "The text result is from the for of looping : " + forOf;
+        }
+    </script>
+</body>
+</html>
